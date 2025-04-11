@@ -1188,6 +1188,8 @@ void setBand(int8_t up_down)
  * Switch the radio to current band
  */
 void useBand() {
+  //Mute SPEAKER
+  digitalWrite(PIN_AMP_EN, LOW);
   currentMode = bandMODE[bandIdx];                  // G8PTN: Added to support mode per band
   if (band[bandIdx].bandType == FM_BAND_TYPE) {
     currentMode = FM;
@@ -1300,7 +1302,7 @@ void useBand() {
 
   // Store mode
   bandMODE[bandIdx] = currentMode;               // G8PTN: Added to support mode per band
-
+  digitalWrite(PIN_AMP_EN, HIGH);
   rssi = 0;
   snr = 0;
   cleanBfoRdsInfo();
