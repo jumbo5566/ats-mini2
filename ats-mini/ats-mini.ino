@@ -2807,11 +2807,15 @@ void displayOff() {
   ledcWrite(PIN_LCD_BL, 0);
   tft.writecommand(ST7789_DISPOFF);
   tft.writecommand(ST7789_SLPIN);
-  delay(120);
+  setCpuFrequencyMhz(80);
+  pinMode(21, INPUT_PULLUP);
+  esp_sleep_enable_ext0_wakeup(GPIO_NUM_21, LOW);
+  esp_light_sleep_start();
 }
 
 void displayOn() {
   display_on = true;
+  setCpuFrequencyMhz(240);
   tft.writecommand(ST7789_SLPOUT);
   delay(120);
   tft.writecommand(ST7789_DISPON);
