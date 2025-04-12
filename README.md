@@ -1,4 +1,4 @@
-# ATS Mini
+# ATS Mini V2 (add ht4832 headphone chip)
 
 ![](docs/source/_static/esp32-si4732-ui-theme.jpg)
 
