@@ -14,7 +14,7 @@ Based on the following sources:
 
 ## Releases
 
-Check out the [Releases](https://github.com/esp32-si4732/ats-mini/releases) page.
+Check out the [Releases] page.
 
 ## Documentation
 
